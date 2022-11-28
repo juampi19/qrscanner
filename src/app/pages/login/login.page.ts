@@ -38,7 +38,13 @@ export class LoginPage implements OnInit {
       return;
     }
 
-    localStorage.setItem( 'usuario', this.loginUser.email );
+    if( this.loginUser.password !== '123456' ) {
+      this.uiService.alertaInformativa( 'El Usuario o Contraseña son incorrectos' );
+      return;
+    }
+
+    localStorage.setItem( 'usuario', JSON.stringify( this.loginUser ) );
+    localStorage.setItem( 'ingresado', 'true' );
     this.navCtrl.navigateRoot( '/menu', { animated: true });
 
   }

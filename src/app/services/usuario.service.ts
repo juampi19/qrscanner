@@ -10,6 +10,6 @@ export class UsuarioService {
   constructor( private http: HttpClient ) { }
 
   obtenerUsuarios() {
-    return this.http.get('https://raw.githubusercontent.com/juampi19/usuariosDB/main/db.json');
+    return this.http.get('https://juampi19.github.io/apiUsuarios/db.json');
   }
 }

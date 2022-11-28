@@ -27,7 +27,7 @@ export class MenuPage implements OnInit {
     }
 
   ngOnInit() {
-    this.usuario = localStorage.getItem('usuario');
+    this.usuario = JSON.parse( localStorage.getItem('usuario') ).email;
   }
 
 
@@ -47,11 +47,16 @@ export class MenuPage implements OnInit {
   }
 
   mostarAyuda(){
-    console.log( 'Ayuda' );
+    this.navCtrl.navigateRoot( '/ayuda', { animated: true });
   }
 
   mostrarHistorial() {
     this.navCtrl.navigateRoot( '/historial', { animated: true });
+  }
+
+  cerrarSesion() {
+    localStorage.clear();
+    this.navCtrl.navigateRoot( '/login', { animated: true });
   }
 
 }
