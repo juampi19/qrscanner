@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/menu" color="primary"></ion-back-button>
+    </ion-buttons>
+
+    <ion-title>historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+
+    <ion-item detail
+      *ngFor="let registro of dataHistorial.historial"
+      (click)="mostrarAsignatura( registro )"
+    >
+      <ion-icon slot="start" name="book-outline"></ion-icon>
+      <ion-label>
+        <h2>{{ registro.text }}</h2>
+        <p>{{ registro.asignatura }}</p>
+      </ion-label>
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

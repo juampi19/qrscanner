@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Bienvenidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="main">
+
+  <ion-slides class="mainSlide" #slidePrincipa>
+    
+    <ion-slide class="main">
+      
+
+      <form (ngSubmit)="login( fLogin )" #fLogin="ngForm" data-cy="formulario">
+        <ion-row>
+          <ion-col>
+            <img class="img-a " src="https://duoc.modyocdn.com/uploads/d1065e11-cde5-40b4-b58f-59004919c757/original/logo_duoc.svg" alt="">
+          </ion-col>
+        </ion-row>
+        <ion-grid class="main-content" fixed>
+          <ion-row>
+            <ion-col>
+              
+                <ion-list>
+                  
+                  <ion-item>
+                    <ion-label>Email</ion-label>
+                    <ion-input name="email"
+                                type="email"
+                                [(ngModel)]="loginUser.email"
+                                required
+                                data-cy="input-email"
+                                ></ion-input>
+                  </ion-item>
+
+                  <ion-item>
+                    <ion-label>Password</ion-label>
+                    <ion-input name="password"
+                                type="password"
+                                [(ngModel)]="loginUser.password"
+                                required
+                                data-cy="input-password"
+                                ></ion-input>
+                  </ion-item>
+
+                </ion-list>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+              <ion-button type="submit"
+                          color="tertiary"
+                          shape="round"
+                          data-cy="boton-login"
+                          >
+                Login
+              </ion-button>
+              <ion-button type="button"
+                          color="tertiary"
+                          shape="round"
+                          routerLink="/recuperar">
+                          
+                Recuperar
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+        </ion-grid>
+      </form>
+    
+    </ion-slide>
+  </ion-slides>  
+
+</ion-content>
