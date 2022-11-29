@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
 import { Asignatura } from '../models/asignatura';
 
 @Injectable({
@@ -8,7 +9,7 @@ export class DataHistorialService {
 
   historial: Asignatura[] = [];
 
-  constructor() {
+  constructor( private emailComposer: EmailComposer ) {
 
   }
 

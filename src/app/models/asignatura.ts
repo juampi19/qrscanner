@@ -25,6 +25,18 @@ export class Asignatura {
                 this.asignatura = 'Aplicaciones moviles';
             break;
 
+            case 'ASY4131':
+                this.asignatura = 'Arquitectura';
+            break;
+
+            case 'INI5111':
+                this.asignatura = 'Ingles Intermedio';
+            break;
+
+            case 'MAT4140':
+                this.asignatura = 'Estadistica Descriptiva';
+            break;
+
             default:
             break;
 

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { BarcodeScanner } from '@awesome-cordova-plugins/barcode-scanner/ngx';
 import { NavController } from '@ionic/angular';
 import { DataHistorialService } from '../../services/data-historial.service';
+import { EmailComposer } from '@awesome-cordova-plugins/email-composer/ngx';
+import { UiService } from 'src/app/services/ui.service';
 
 @Component({
   selector: 'app-menu',
@@ -21,9 +23,9 @@ export class MenuPage implements OnInit {
   constructor(
     private barcodeScanner: BarcodeScanner,
     private navCtrl: NavController,
-    private dataHistorial: DataHistorialService ) {
-
-
+    private dataHistorial: DataHistorialService,
+    private emailComposer: EmailComposer,
+    private uiService: UiService  ) {
     }
 
   ngOnInit() {
@@ -38,6 +40,8 @@ export class MenuPage implements OnInit {
 
       if( !barcodeData.cancelled ) {
         this.dataHistorial.guardarHistorial( barcodeData.text );
+
+        this.uiService.mandarEmail( barcodeData.text );
 
       }
 
